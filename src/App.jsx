@@ -1,9 +1,20 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Home } from './pages/Home'
+import { Layout } from './layout/Layout'
+import { NewClient } from './pages/NewClient'
+
 function App() {
   
   return (
-    <div className="text-3xl text-red-700">
-      hello world
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/clients' element={<Layout />} >
+          <Route index element={<Home />} />
+          <Route path='new' element={<NewClient />} />
+          <Route index element={<Home />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
