@@ -25,7 +25,7 @@ export const Layout = () => {
         </nav>
       </div>
 
-      <div className="md:basis-3/4">
+      <div className="md:basis-3/4 p-10 md:h-screen overflow-scroll">
         <Outlet />
       </div>
     </div>
