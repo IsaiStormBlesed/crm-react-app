@@ -12,13 +12,19 @@ export const Form = () => {
     notes: yup.string()
   })
 
-  const submit = async (values) => {
-    try {
-      const url = 'https://localhost:4000'
+  const handleSubmit = async (values) => {
 
-    } catch (error) {
-      throw new Error(error)
-    }
+    const url = 'http://localhost:4000/clients'
+
+    const response = await fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(values),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+ 
+    const data = await response.json()
   }
 
   return (
@@ -32,8 +38,7 @@ export const Form = () => {
           notes: ''
         }}
         onSubmit={(values) => {
-          submit(values)
-          console.log('hola');
+          handleSubmit(values)
         }}
         validationSchema={newClientSchema}
       >
