@@ -4,6 +4,7 @@ import { Home } from './pages/Home'
 import { LandingPage } from './layout/LandingPage'
 import { Layout } from './layout/Layout'
 import { NewClient } from './pages/NewClient'
+import { ClientScreen } from './pages/ClientScreen'
 
 function App() {
   
@@ -13,6 +14,7 @@ function App() {
         <Route path='/' element={<LandingPage />} />
         <Route path='/clients' element={<Layout />} >
           <Route index element={<Home />} />
+          <Route path=':id' element={<ClientScreen />} />
           <Route path='new' element={<NewClient />} />
           <Route path='edit/:id' element={<EditClient />} />
         </Route>

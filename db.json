@@ -1,8 +1,12 @@
 {
   "clients": [
     {
-      "id": 1,
-      "name": "Isai"
+      "name": "yo",
+      "email": "test@test.com",
+      "company": "abc",
+      "telephone": "123456",
+      "notes": "123",
+      "id": 1
     },
     {
       "name": "isai",
@@ -27,6 +31,30 @@
       "telephone": "123456",
       "notes": "123",
       "id": 4
+    },
+    {
+      "name": "daniel",
+      "email": "daniel@daniel.com",
+      "company": "danielitos INC",
+      "telephone": "123456",
+      "notes": "abc",
+      "id": 5
+    },
+    {
+      "name": "oso",
+      "email": "oso@oso.com",
+      "company": "oso INC",
+      "telephone": "789456123",
+      "notes": "miel",
+      "id": 6
+    },
+    {
+      "name": "aba",
+      "email": "aba@aba.com",
+      "company": "aba",
+      "telephone": "123456",
+      "notes": "123456",
+      "id": 7
     }
   ]
 }

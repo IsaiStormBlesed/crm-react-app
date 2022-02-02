@@ -1,8 +1,11 @@
 import * as yup from 'yup'
 import { Formik, Field  } from "formik"
+import { useNavigate } from 'react-router-dom'
 
 
 export const Form = () => {
+
+  const navigate = useNavigate()
 
   const newClientSchema = yup.object().shape({
     name: yup.string().min(3).required(),
@@ -25,6 +28,8 @@ export const Form = () => {
     })
  
     const data = await response.json()
+
+    navigate('/clients')
   }
 
   return (
@@ -37,8 +42,9 @@ export const Form = () => {
           telephone: '',
           notes: ''
         }}
-        onSubmit={(values) => {
-          handleSubmit(values)
+        onSubmit={async (values, actions) => {
+          await handleSubmit(values)
+          actions.resetForm()
         }}
         validationSchema={newClientSchema}
       >

@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom"
+import { Outlet } from "react-router-dom"
 import { CustomLink } from "../components/CustomLink"
 
 export const Layout = () => {
@@ -14,7 +14,7 @@ export const Layout = () => {
           <CustomLink 
             to='/clients'
           >
-            Client
+            Clients
           </CustomLink>
 
           <CustomLink
