@@ -1,6 +1,6 @@
 import * as yup from 'yup'
 import { Formik, Field  } from "formik"
-import { useLocation } from 'react-router-dom'
+
 
 export const Form = () => {
 
@@ -12,10 +12,10 @@ export const Form = () => {
     notes: yup.string()
   })
 
-  console.log(HMR_HOST);
   const submit = async (values) => {
     try {
-      console.log(url);
+      const url = 'https://localhost:4000'
+
     } catch (error) {
       throw new Error(error)
     }
