@@ -1,5 +1,6 @@
 import * as yup from 'yup'
 import { Formik, Field  } from "formik"
+import { useLocation } from 'react-router-dom'
 
 export const Form = () => {
 
@@ -11,8 +12,13 @@ export const Form = () => {
     notes: yup.string()
   })
 
-  const hanldeSubmit = (values) => {
-    console.log(values);
+  console.log(HMR_HOST);
+  const submit = async (values) => {
+    try {
+      console.log(url);
+    } catch (error) {
+      throw new Error(error)
+    }
   }
 
   return (
@@ -26,7 +32,8 @@ export const Form = () => {
           notes: ''
         }}
         onSubmit={(values) => {
-          handleSubmit(values)
+          submit(values)
+          console.log('hola');
         }}
         validationSchema={newClientSchema}
       >

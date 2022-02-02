@@ -3,6 +3,7 @@ tasks:
   - init: npm install
     command: |
       export HMR_HOST=`gp url 3000`
+      export JSON_SERVER=`gp url 4000`
       npm run dev
 ports:
   - port: 3000
