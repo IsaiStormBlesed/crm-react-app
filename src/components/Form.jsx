@@ -4,11 +4,11 @@ import { Formik, Field  } from "formik"
 export const Form = () => {
 
   const newClientSchema = yup.object().shape({
-    name: yup.string().required(),
-    email: '',
-    company: '',
-    telephone: '',
-    notes: ''
+    name: yup.string().min(3).required(),
+    email: yup.string().email().required(),
+    company: yup.string().max(20).required(),
+    telephone: yup.number().positive().integer().typeError('Tel. not valid, it must be a number'),
+    notes: yup.string()
   })
 
   const hanldeSubmit = (values) => {
@@ -48,7 +48,7 @@ export const Form = () => {
               {
                 errors.name && touched.name 
                 ? 
-                <small className='text-red-600 uppercase'>{errors.name}</small>
+                <small className='text-red-600 uppercase text-base'>{errors.name}</small>
                 :
                 null
               }
@@ -65,7 +65,15 @@ export const Form = () => {
                 type='text'
                 className="rounded-md ring-2 ring-teal-600 block w-full mt-3 p-3 bg-teal-50"
                 name='company'
-              />           
+              />
+
+              {
+                errors.company && touched.company 
+                ? 
+                <small className='text-red-600 uppercase text-base'>{errors.company}</small>
+                :
+                null
+              }           
             </div>
 
             <div className="mb-5">
@@ -80,7 +88,15 @@ export const Form = () => {
                 placeholder="email@email.com"
                 className="rounded-md ring-2 ring-teal-600 block w-full mt-3 p-3 bg-teal-50"
                 name='email'
-              />           
+              />
+
+              {
+                errors.email && touched.email 
+                ? 
+                <small className='text-red-600 uppercase text-base'>{errors.email}</small>
+                :
+                null
+              }           
             </div>
 
             <div className="mb-5">
@@ -94,7 +110,15 @@ export const Form = () => {
                 type='tel'
                 className="rounded-md ring-2 ring-teal-600 block w-full mt-3 p-3 bg-teal-50"
                 name='telephone'
-              />           
+              />
+
+              {
+                errors.telephone && touched.telephone 
+                ? 
+                <small className='text-red-600 uppercase text-base'>{errors.telephone}</small>
+                :
+                null
+              }           
             </div>
 
             <div className="mb-5">
